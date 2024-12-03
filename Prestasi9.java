@@ -99,3 +99,33 @@ public class Prestasi9 {
 
         System.out.println("Data prestasi berhasil ditambahkan.");
     }
+    public static void tampilkanSemuaPrestasi(String[][] dataPrestasi, int jumlahData) {
+        System.out.println("\n=================================================");
+        if (jumlahData == 0) {
+            System.out.println("Belum ada data prestasi.");
+        } else {
+            for (int i = 0; i < jumlahData; i++) {
+                System.out.println("Nama: " + dataPrestasi[i][0] + " | NIM: " + dataPrestasi[i][1] +
+                        " | Jenis: " + dataPrestasi[i][2] + " | Tingkat: " + dataPrestasi[i][3] +
+                        " | Tahun: " + dataPrestasi[i][4]);
+            }
+        }
+    }
+
+    public static void analisisPrestasi(String[][] dataPrestasi, int jumlahData, String jenisAnalisis) {
+        System.out.println("\n=================================================");
+        boolean ditemukan = false;
+
+        for (int i = 0; i < jumlahData; i++) {
+            if (dataPrestasi[i][2].equalsIgnoreCase(jenisAnalisis)) {
+                System.out.println("Nama: " + dataPrestasi[i][0] + " | NIM: " + dataPrestasi[i][1] +
+                        " | Tingkat: " + dataPrestasi[i][3] + " | Tahun: " + dataPrestasi[i][4]);
+                ditemukan = true;
+            }
+        }
+
+        if (!ditemukan) {
+            System.out.println("Tidak ada data prestasi dengan jenis tersebut.");
+        }
+    }
+}
